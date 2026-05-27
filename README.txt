@@ -8,7 +8,6 @@ Cara Menjalankan:
 2. Buka terminal di folder GrowList
 3. Install Flask jika belum menginstall.
 4. Jalankan perintah: python app.py
-5. Buka browser ke alamat: http://127.0.0.1:5000/
 
 Struktur Folder:
 - app.py → file utama Flask
