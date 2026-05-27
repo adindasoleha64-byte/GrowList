@@ -1,0 +1,474 @@
+:root {
+  --bg-color: #e0f7e9;
+  --sidebar-color: #c8e6c9;
+  --text-color: #2e7d32;
+  --button-color: #4caf50;
+  --progress-color: #66bb6a;
+  --font-family: 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family: var(--font-family);
+
+  background-color: var(--bg-color);
+
+  display: flex;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+/* =========================
+   TASKBAR
+========================= */
+
+.taskbar {
+  width: 220px;
+
+  min-width: 220px;
+
+  background-color: var(--sidebar-color);
+
+  padding: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  transition: 0.3s ease;
+}
+
+.pixel-mode .taskbar {
+  width: 240px;
+
+  min-width: 240px;
+}
+
+.taskbar h1 {
+  margin: 0 0 10px;
+
+  color: var(--text-color);
+
+  font-size: 20px;
+
+  word-break: break-word;
+
+  line-height: 1.4;
+}
+
+.taskbar button,
+.taskbar select {
+  background-color: var(--button-color);
+
+  color: white;
+
+  padding: 10px;
+
+  border-radius: 8px;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-family: var(--font-family);
+
+  font-size: 14px;
+
+  width: 100%;
+
+  transition: 0.2s ease;
+}
+
+.taskbar button:hover,
+.taskbar select:hover {
+  opacity: 0.9;
+}
+
+.taskbar select {
+  appearance: none;
+}
+
+/* =========================
+   MAIN TASK AREA
+========================= */
+
+.task-area {
+  flex: 1;
+
+  width: 100%;
+
+  padding: 30px;
+
+  background-color: var(--bg-color);
+
+  color: var(--text-color);
+
+  overflow-x: hidden;
+}
+
+.task-area h2 {
+  margin-top: 0;
+
+  font-size: 22px;
+
+  word-break: break-word;
+}
+
+/* =========================
+   TASK ITEM
+========================= */
+
+.task {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+
+  width: 100%;
+}
+
+.task input[type="checkbox"] {
+  transform: scale(1.2);
+
+  flex-shrink: 0;
+}
+
+.inline-input {
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 8px;
+
+  border: 1px solid var(--text-color);
+
+  border-radius: 6px;
+
+  font-size: 16px;
+
+  font-family: var(--font-family);
+
+  background-color: white;
+
+  color: var(--text-color);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.add-button {
+  background-color: var(--button-color);
+
+  color: white;
+
+  font-size: 20px;
+
+  padding: 10px 14px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  margin-top: 10px;
+
+  transition: 0.2s ease;
+}
+
+.add-button:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   THEME ICONS
+========================= */
+
+#theme-icons {
+  position: fixed;
+
+  bottom: 20px;
+
+  right: 20px;
+
+  display: flex;
+
+  flex-direction: row;
+
+  gap: 10px;
+
+  z-index: 1000;
+}
+
+.icon-set {
+  display: none;
+
+  flex-direction: row;
+
+  gap: 6px;
+
+  flex-wrap: wrap;
+}
+
+.pixel-icon {
+  width: 100px;
+
+  height: 100px;
+
+  object-fit: contain;
+
+  image-rendering: pixelated;
+
+  transition: transform 0.3s ease;
+}
+
+.pixel-icon:hover {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-container {
+  margin-top: 30px;
+}
+
+.progress-label {
+  margin-bottom: 8px;
+
+  font-size: 14px;
+}
+
+.progress-bar {
+  width: 100%;
+
+  height: 18px;
+
+  background: rgba(255, 255, 255, 0.4);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+
+  width: 0%;
+
+  border-radius: 20px;
+
+  transition: width 0.3s ease;
+
+  background: var(--progress-color);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .taskbar {
+    width: 145px;
+    min-width: 145px;
+
+    padding: 12px;
+  }
+
+  .pixel-mode .taskbar {
+    width: 145px;
+    min-width: 145px;
+  }
+
+  .taskbar h1 {
+    font-size: 16px;
+
+    line-height: 1.4;
+  }
+
+  .pixel-mode .taskbar h1 {
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    word-break: keep-all;
+  }
+
+  .taskbar button,
+  .taskbar select {
+    font-size: 11px;
+
+    padding: 8px;
+  }
+
+  .task-area {
+    padding: 20px;
+  }
+
+  .task-area h2 {
+    font-size: 18px;
+  }
+
+  .pixel-mode .task-area h2 {
+    font-size: 16px;
+  }
+
+  .inline-input {
+    font-size: 14px;
+  }
+
+  .pixel-mode .inline-input {
+    font-size: 12px;
+  }
+
+  .pixel-icon {
+    width: 65px;
+    height: 65px;
+  }
+
+  #theme-icons {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* =========================
+   SMALL PHONE
+========================= */
+
+@media (max-width: 480px) {
+
+  .taskbar {
+    width: 155px !important;
+    min-width: 155px !important;
+
+    padding: 10px;
+  }
+
+  .pixel-mode .taskbar {
+    width: 155px !important;
+    min-width: 155px !important;
+  }
+
+  .taskbar h1 {
+    font-size: 16px !important;
+
+    line-height: 1.4;
+  }
+
+  .pixel-mode .taskbar h1 {
+    font-size: 11px !important;
+
+    line-height: 1.5;
+
+    word-break: keep-all;
+  }
+
+  .taskbar button,
+  .taskbar select {
+    font-size: 11px !important;
+
+    padding: 8px !important;
+  }
+
+  .task-area {
+    padding: 15px;
+  }
+
+  .task-area h2 {
+    font-size: 16px;
+  }
+
+  .inline-input {
+    font-size: 13px;
+
+    padding: 6px;
+  }
+
+  .pixel-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .add-button {
+    font-size: 16px;
+
+    padding: 8px 11px;
+  }
+
+  .progress-label {
+    font-size: 12px;
+  }
+}
+#splash-screen {
+
+  position: fixed;
+
+  inset: 0;
+
+  background: #e0f7e9;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 20px;
+
+  z-index: 9999;
+
+  transition: opacity 0.8s ease;
+}
+
+.splash-icon {
+
+  width: 140px;
+
+  image-rendering: pixelated;
+
+  animation: floatIcon 2s ease-in-out infinite;
+}
+
+#splash-screen h1 {
+
+  color: #2e7d32;
+
+  font-size: 28px;
+
+  margin: 0;
+
+  text-align: center;
+}
+
+@keyframes floatIcon {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

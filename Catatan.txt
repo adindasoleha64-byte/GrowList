@@ -1,0 +1,6 @@
+Catatan
+Cara menjalankan Backend:
+1. Install Python
+2. Install Flask: pip install flask
+3. Jalankan: python app.py
+4. Akses API: http://127.0.0.1:5000

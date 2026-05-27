@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GrowList</title>
+
+ <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <link rel="icon"
+        type="image/png"
+        href="{{ url_for('static', filename='assets/Growlist Icon.png') }}">
+</head>
+
+<body>
+
+  <!-- =========================
+       SIDEBAR
+  ========================== -->
+  <div id="splash-screen">
+
+  <img
+    src="{{ url_for('static', filename='assets/Growlist Icon.png') }}"
+    class="splash-icon">
+
+  <h1>GrowList</h1>
+
+</div>
+
+  <div class="taskbar">
+
+    <h1> GrowList</h1>
+
+    <select
+      id="theme-picker"
+      onchange="changeTheme(this.value)">
+
+      <option value="forest">🌲 Forest</option>
+
+      <option value="ocean">🌊 Ocean</option>
+
+      <option value="pixel">🧩 Pixel</option>
+
+    </select>
+
+    <button onclick="deleteTask()">
+      Delete Task
+    </button>
+
+    <button onclick="clearTasks()">
+      Clear All
+    </button>
+
+  </div>
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
+  <div class="task-area">
+
+    <h2>Daftar Tugas</h2>
+
+    <!-- TASK LIST -->
+    <div id="task-container"></div>
+
+    <!-- ADD BUTTON -->
+    <button
+      class="add-button"
+      onclick="addTaskInput()">
+
+      +
+
+    </button>
+
+    <!-- =========================
+         PROGRESS BAR
+    ========================== -->
+
+    <div class="progress-container">
+
+      <div class="progress-label">
+        Today's Growth
+      </div>
+
+      <div class="progress-bar">
+
+        <div
+          class="progress-fill"
+          id="progress-fill">
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =========================
+       THEME ICONS
+  ========================== -->
+
+  <div id="theme-icons">
+
+    <!-- PIXEL -->
+    <div class="pixel-set icon-set">
+
+      <img
+        src="{{ url_for('static', filename='assets/pixel access.png') }}"
+        class="pixel-icon"
+        alt="Access Granted">
+
+
+      <img
+        src="{{ url_for('static', filename='assets/pixel 2.png') }}"
+        class="pixel-icon"
+        alt="Controller Icon">
+
+    </div>
+
+    <!-- FOREST -->
+    <div class="forest-set icon-set">
+
+      <img
+        src="{{ url_for('static', filename='assets/pohon.png') }}"
+        class="pixel-icon"
+        alt="pohon Icon">
+
+    </div>
+
+    <!-- OCEAN -->
+    <div class="ocean-set icon-set">
+
+
+      <img
+        src="{{ url_for('static', filename='assets/paus.png') }}"
+        class="pixel-icon"
+        alt="Paus Icon">
+
+    </div>
+
+  </div>
+
+  <!-- =========================
+       SCRIPT
+  ========================== -->
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
