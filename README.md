@@ -1,21 +1,82 @@
-GrowList – Aplikasi To Do List Berbasis Web
+# 🌱 GrowList
 
-Deskripsi:
-GrowList adalah aplikasi to-do list interaktif berbasis web yang dibangun menggunakan HTML, CSS, JavaScript, dan Flask. Aplikasi ini mendukung tema visual yang dapat diganti, ikon yang hidup, serta efek confetti saat semua tugas selesai.
+GrowList is a simple web-based to-do list application built with Flask. It helps users organize daily tasks through a clean interface, multiple themes, and an interactive user experience.
 
-Cara Menjalankan:
-1. Ekstrak folder ZIP
-2. Buka terminal di folder GrowList
-3. Install Flask jika belum menginstall.
-4. Jalankan perintah: python app.py
+🌐 **Live Demo:** https://adndaslh.pythonanywhere.com/
 
-Struktur Folder:
-- app.py → file utama Flask
-- tree.py → struktur data pohon tugas
-- templates/ → berisi file HTML
-- static/assets/ → berisi CSS, JS, dan ikon
-- __pycache__/ → file cache Python (boleh diabaikan)
+---
 
-Catatan:
-GrowList menggunakan struktur pohon (tree) dan logika proposisional sebagai penerapan konsep matematika diskrit.
-	
+## 📷 Screenshot
+
+> ## Forest theme:
+![forest](screenshots/forest.png)
+
+![ocean](screenshots/ocean.png)
+
+![pixel](screenshots/pixel.png)
+
+---
+
+##  Features
+
+-  Add new tasks
+-  Mark tasks as completed
+-  Delete tasks
+-  Save task history using Local Storage
+-  Confetti animation when all tasks are completed
+-  Three built-in themes
+-  Progress Bar
+
+---
+
+##  Tech Stack
+
+- Python
+- Flask
+- HTML5
+- CSS3
+- JavaScript
+
+---
+
+##  Run Locally
+
+Clone this repository:
+
+```bash
+git clone https://github.com/adindasoleha64-byte/GrowList.git
+cd GrowList
+```
+
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the application:
+
+```bash
+python app.py
+```
+
+---
+
+## 📁 Project Structure
+
+```
+GrowList/
+├── static/
+├── templates/
+├── app.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+##  Author
+
+**Adinda Soleha**
+
+GitHub: https://github.com/adindasoleha64-byte
